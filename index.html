@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sudoku</title>
+	<link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+	<!-- <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'> -->
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<!-- <div class="cursor"> -->
+	<div class="container" id="header">
+		<h1>Sudoku</h1>
+		<dialog id="Correct">
+    	<h3> Correct! </h3>
+    	<p>You successfully completed the puzzle!</p>
+    	<button id="exit">Close</button>
+    </dialog>
+	</div>
+	<div class="container" id="9_by_9_box">
+		<div class="container" id="row1">
+			<div class="box" id="Row1Col1"></div>
+  		<div class="box" id="Row1Col2"></div>
+  		<div class="box grid_vert " id="Row1Col3"></div>
+  		<div class="box" id="Row1Col4"></div>
+  		<div class="box" id="Row1Col5"></div>
+  		<div class="box grid_vert" id="Row1Col6"></div>
+  		<div class="box" id="Row1Col7"></div>
+  		<div class="box" id="Row1Col8"></div>
+  		<div class="box" id="Row1Col9"></div>
+		</div>
+
+		<div class="container" id="row2">
+			<div class="box" id="Row2Col1"></div>
+  		<div class="box" id="Row2Col2"></div>
+  		<div class="box grid_vert" id="Row2Col3"></div>
+  		<div class="box" id="Row2Col4"></div>
+  		<div class="box" id="Row2Col5"></div>
+  		<div class="box grid_vert" id="Row2Col6"></div>
+  		<div class="box" id="Row2Col7"></div>
+  		<div class="box" id="Row2Col8"></div>
+  		<div class="box" id="Row2Col9"></div>
+		</div>
+
+		<div class="container grid_hor" id="row3">
+			<div class="box" id="Row3Col1"></div>
+  		<div class="box" id="Row3Col2"></div>
+  		<div class="box grid_vert" id="Row3Col3"></div>
+  		<div class="box" id="Row3Col4"></div>
+  		<div class="box" id="Row3Col5"></div>
+  		<div class="box grid_vert" id="Row3Col6"></div>
+  		<div class="box" id="Row3Col7"></div>
+  		<div class="box" id="Row3Col8"></div>
+  		<div class="box" id="Row3Col9"></div>
+		</div>
+
+		<div class="container" id="row4">
+			<div class="box" id="Row4Col1"></div>
+  		<div class="box" id="Row4Col2"></div>
+  		<div class="box grid_vert" id="Row4Col3"></div>
+  		<div class="box" id="Row4Col4"></div>
+  		<div class="box" id="Row4Col5"></div>
+  		<div class="box grid_vert" id="Row4Col6"></div>
+  		<div class="box" id="Row4Col7"></div>
+  		<div class="box" id="Row4Col8"></div>
+  		<div class="box" id="Row4Col9"></div>
+		</div>
+		<div class="container" id="row5">
+			<div class="box" id="Row5Col1"></div>
+  		<div class="box" id="Row5Col2"></div>
+  		<div class="box grid_vert" id="Row5Col3"></div>
+  		<div class="box" id="Row5Col4"></div>
+  		<div class="box" id="Row5Col5"></div>
+  		<div class="box grid_vert" id="Row5Col6"></div>
+  		<div class="box" id="Row5Col7"></div>
+  		<div class="box" id="Row5Col8"></div>
+  		<div class="box" id="Row5Col9"></div>
+		</div>
+
+		<div class="container grid_hor" id="row6">
+			<div class="box" id="Row6Col1"></div>
+  		<div class="box" id="Row6Col2"></div>
+  		<div class="box grid_vert" id="Row6Col3"></div>
+  		<div class="box" id="Row6Col4"></div>
+  		<div class="box" id="Row6Col5"></div>
+  		<div class="box grid_vert" id="Row6Col6"></div>
+  		<div class="box" id="Row6Col7"></div>
+  		<div class="box" id="Row6Col8"></div>
+  		<div class="box" id="Row6Col9"></div>
+		</div>
+
+		<div class="container" id="row7">
+			<div class="box" id="Row7Col1"></div>
+  		<div class="box" id="Row7Col2"></div>
+  		<div class="box grid_vert" id="Row7Col3"></div>
+  		<div class="box" id="Row7Col4"></div>
+  		<div class="box" id="Row7Col5"></div>
+  		<div class="box grid_vert" id="Row7Col6"></div>
+  		<div class="box" id="Row7Col7"></div>
+  		<div class="box" id="Row7Col8"></div>
+  		<div class="box" id="Row7Col9"></div>
+		</div>
+
+		<div class="container" id="row8">
+			<div class="box" id="Row8Col1"></div>
+  		<div class="box" id="Row8Col2"></div>
+  		<div class="box grid_vert" id="Row8Col3"></div>
+  		<div class="box" id="Row8Col4"></div>
+  		<div class="box" id="Row8Col5"></div>
+  		<div class="box grid_vert" id="Row8Col6"></div>
+  		<div class="box" id="Row8Col7"></div>
+  		<div class="box" id="Row8Col8"></div>
+  		<div class="box" id="Row8Col9"></div>
+		</div>
+		<div class="container" id="row9">
+			<div class="box" id="Row9Col1"></div>
+  		<div class="box" id="Row9Col2"></div>
+  		<div class="box grid_vert" id="Row9Col3"></div>
+  		<div class="box" id="Row9Col4"></div>
+  		<div class="box" id="Row9Col5"></div>
+  		<div class="box grid_vert" id="Row9Col6"></div>
+  		<div class="box" id="Row9Col7"></div>
+  		<div class="box" id="Row9Col8"></div>
+  		<div class="box" id="Row9Col9"></div>
+		</div>
+	</div>
+	<div id="dropdown">
+		<select id="level" name="level">
+	  		<option name="level" value="Easy" selected> Easy </option>
+	  		<option name="level" value="Medium"> Medium </option>
+	 		 	<option name="level" value="Hard"> Hard </option>
+	 	</select>
+	</div>
+	<div id="buttons">
+		<button id="Puzzle_Gen" type="submit" >Generate Puzzle!</button>
+		<button id="Puzzle_Clear" type="submit">Clear Puzzle</button>
+		<button id="check" type="submit">Check Solution</button>
+	</div>
+	<br></br>
+	<br></br>
+	
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="style.js"></script>
+</body>
+</html>
